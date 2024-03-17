@@ -1,10 +1,10 @@
 package com.yeni.board.models
 
 
-data class BoardCreateDto (
+data class BoardDto (
     val name: String
 )
 
-fun BoardCreateDto.toEntity() = Board(
+fun BoardDto.toEntity() = Board(
         name = this.name
 )

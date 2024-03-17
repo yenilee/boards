@@ -1,6 +1,6 @@
 package com.yeni.board.controllers
 
-import com.yeni.board.models.BoardCreateDto
+import com.yeni.board.models.BoardDto
 import com.yeni.board.models.Board
 import com.yeni.board.services.BoardService
 import org.springframework.http.HttpStatus
@@ -19,7 +19,7 @@ class BoardController (private val boardService: BoardService) {
     }
 
     @PostMapping("/")
-    fun createBoard(@RequestBody boardDto: BoardCreateDto): ResponseEntity<Board> {
+    fun createBoard(@RequestBody boardDto: BoardDto): ResponseEntity<Board> {
         boardService.create(boardDto)
         return ResponseEntity(HttpStatus.CREATED)
     }

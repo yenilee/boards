@@ -1,6 +1,6 @@
 package com.yeni.board.services
 
-import com.yeni.board.models.BoardCreateDto
+import com.yeni.board.models.BoardDto
 import com.yeni.board.models.toEntity
 import com.yeni.board.models.Board
 import com.yeni.board.repositories.BoardRepository
@@ -16,7 +16,7 @@ class BoardService {
         return boardRepository.findAll()
     }
 
-    fun create(boardDto: BoardCreateDto ) {
+    fun create(boardDto: BoardDto ) {
         val loadedBoard = boardDto.toEntity()
         boardRepository.save(loadedBoard)
     }
